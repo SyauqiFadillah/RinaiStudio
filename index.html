@@ -255,6 +255,7 @@
             flex-direction: column;
             gap: 1rem;
             align-items: center;
+            justify-content: center;
         }
 
         /* Buttons */
@@ -440,6 +441,95 @@
             cursor: pointer;
             font-size: 1.5rem;
             color: var(--text-dark);
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            background: var(--background-light);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border: 2px solid var(--border-light);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .pricing-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--accent-color);
+            background: linear-gradient(135deg, rgba(255, 175, 0, 0.05) 0%, rgba(255, 175, 0, 0.1) 100%);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-color);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .pricing-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .pricing-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 1rem 0;
+        }
+
+        .pricing-price small {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-features li:before {
+            content: "✓";
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.2rem;
         }
 
         /* Testimonials
@@ -730,6 +820,7 @@
 
             .hero-cta {
                 flex-direction: row;
+                justify-content: center;
             }
 
             .contact-content {
@@ -803,6 +894,7 @@
                         <li><a href="#about">About</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
                         <!-- <li><a href="#packages">Packages</a></li> -->
                         <!-- <li><a href="#testimonials">Testimonials</a></li> -->
                         <li><a href="#contact">Contact</a></li>
@@ -823,6 +915,7 @@
                         <li><a href="#about">About</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
                         <!-- <li><a href="#packages">Packages</a></li> -->
                         <!-- <li><a href="#testimonials">Testimonials</a></li> -->
                         <li><a href="#contact">Contact</a></li>
@@ -924,33 +1017,91 @@
                 <div class="portfolio-grid">
                     <!-- REPLACE: Update image sources with actual portfolio images -->
                     <div class="portfolio-item" data-project="Modern Brand Identity" data-description="Complete brand identity design for a new student orientation event including logo and digital assets.">
-                        <img src="/assets/portfolio-1.jpg" alt="Modern brand identity design featuring modern and minimalist logo">
+                        <img src="/assets/portfolio-1.jpeg" alt="Modern brand identity design featuring modern and minimalist logo">
                         <div class="portfolio-caption">
                             <h4>Modern Brand Identity</h4>
                             <p>New Student Orientation Event Branding</p>
                         </div>
                     </div>
                     <div class="portfolio-item" data-project="Event Poster Series" data-description="Dynamic poster for Industrial Visit Event featuring bold typography and vibrant color schemes.">
-                        <img src="/assets/portfolio-2.jpg" alt="Colorful event poster with bold typography and creative layout">
+                        <img src="/assets/portfolio-2.jpeg" alt="Colorful event poster with bold typography and creative layout">
                         <div class="portfolio-caption">
                             <h4>Event Poster Series</h4>
                             <p>Music Festival Promotion</p>
                         </div>
                     </div>
                     <div class="portfolio-item" data-project="Product Packaging" data-description="Inclusive Poster with Impactful Meaning and Stunning Visual.">
-                        <img src="/assets/portfolio-3.jpg" alt="Image Manipulation with Modern and Seamless design">
+                        <img src="/assets/portfolio-3.jpeg" alt="Image Manipulation with Modern and Seamless design">
                         <div class="portfolio-caption">
                             <h4>Image Manipulation</h4>
                             <p>Inclusive Poster</p>
                         </div>
                     </div>
                     <div class="portfolio-item" data-project="Social Media Campaign" data-description="Comprehensive social media graphics package for Campus Information including Instagram posts, stories, and promotional materials.">
-                        <img src="/assets/portfolio-4.jpg" alt="Social media graphics collection for Campus Information with Dynamic visual identity">
+                        <img src="/assets/portfolio-4.jpeg" alt="Social media graphics collection for Campus Information with Dynamic visual identity">
                         <div class="portfolio-caption">
                             <h4>Social Media Campaign</h4>
                             <p>Campus information Design Graphics</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="pricing">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Pricing</h2>
+                    <p>Transparent and affordable pricing packages for every need</p>
+                </div>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3>Starter</h3>
+                        <div class="pricing-price">Rp 150K<small>/mulai dari</small></div>
+                        <ul class="pricing-features">
+                            <li>Logo Design (3 konsep)</li>
+                            <li>2 Revisi</li>
+                            <li>File resolusi tinggi</li>
+                            <li>Panduan brand dasar</li>
+                            <li>Pengerjaan 5 hari</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline">Pesan Sekarang</a>
+                    </div>
+                    <div class="pricing-card featured">
+                        <div class="pricing-badge">Paling Populer</div>
+                        <h3>Professional</h3>
+                        <div class="pricing-price">Rp 450K<small>/mulai dari</small></div>
+                        <ul class="pricing-features">
+                            <li>Identitas brand lengkap</li>
+                            <li>Logo + 2 desain tambahan</li>
+                            <li>Revisi unlimited</li>
+                            <li>Semua format file</li>
+                            <li>Dokumen panduan brand</li>
+                            <li>Desain kartu nama</li>
+                            <li>Pengerjaan 3 hari</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary">Pesan Sekarang</a>
+                    </div>
+                    <div class="pricing-card">
+                        <h3>Premium</h3>
+                        <div class="pricing-price">Rp 1.1Jt<small>/mulai dari</small></div>
+                        <ul class="pricing-features">
+                            <li>Paket brand lengkap</li>
+                            <li>Logo + 5 desain tambahan</li>
+                            <li>Revisi unlimited</li>
+                            <li>Semua format + source file</li>
+                            <li>Panduan brand komprehensif</li>
+                            <li>Paket stationery bisnis</li>
+                            <li>Template social media</li>
+                            <li>Support prioritas</li>
+                            <li>Pengerjaan 1 hari</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline">Pesan Sekarang</a>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <p style="color: var(--text-light);">Semua harga adalah tarif awal. <a href="#contact" style="color: var(--accent-color); text-decoration: none;">Hubungi kami</a> untuk penawaran khusus sesuai kebutuhan Anda.</p>
                 </div>
             </div>
         </section>
@@ -1150,6 +1301,7 @@
                         <li><a href="#about">About</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
                         <!-- <li><a href="#packages">Packages</a></li> -->
                         <li><a href="#contact">Contact</a></li>
                     </ul>
@@ -1158,12 +1310,12 @@
                     <h4>Contact Us</h4>
                     <div style="display: flex; gap: 1rem; justify-content: flex-end;">
                         <!-- REPLACE: Update social media links with actual business profiles -->
-                        <a href="https://wa.me/6281232112157" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                        <a href="https://wa.me/6281906680230" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M17.472 14.382C17.367 14.382 17.007 14.382 16.532 14.382C16.125 14.382 15.718 14.125 15.718 13.718C15.718 13.311 16.125 13.054 16.532 13.054C17.007 13.054 17.367 13.054 17.472 13.054C18.536 13.054 19.4 12.19 19.4 11.126V6.928C19.4 5.864 18.536 5 17.472 5H6.928C5.864 5 5 5.864 5 6.928V11.126C5 12.19 5.864 13.054 6.928 13.054H10.718C11.125 13.054 11.532 13.311 11.532 13.718C11.532 14.125 11.125 14.382 10.718 14.382H6.928C5.313 14.382 4 13.069 4 11.454V6.6C4 4.985 5.313 3.672 6.928 3.672H17.472C19.087 3.672 20.4 4.985 20.4 6.6V11.454C20.4 13.069 19.087 14.382 17.472 14.382Z"/>
                             </svg>
                         </a>
-                        <a href="https://instagram.com/syauqifadillah_" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <a href="https://instagram.com/rinai.studioo" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                                 <path d="M16 11.37C16 14.24 13.24 17 10.37 17C7.5 17 5 14.24 5 11.37C5 8.5 7.5 5.63 10.37 5.63C13.24 5.63 16 8.5 16 11.37Z"/>
