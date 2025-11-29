@@ -744,7 +744,7 @@
         .footer-social a[href*="instagram"]:hover {
             background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%) !important;
         }
-        
+
         /* Testimonials
         .testimonials {
             background: var(--background-light);
@@ -966,6 +966,38 @@
             text-align: center;
         }
 
+        /* Footer Brand dengan Logo Gambar */
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-logo-img {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1); /* Membuat logo jadi putih */
+        }
+
+        .footer-logo .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
         .footer-content {
             display: grid;
             grid-template-columns: 1fr;
@@ -1065,6 +1097,36 @@
 
             .hero {
                 padding: 8rem 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-logo .logo-icon,
+            .footer-logo .logo-pixel {
+                width: 38px;
+                height: 38px;
+            }
+            
+            .footer-logo .logo-icon {
+                font-size: 1.5rem;
+            }
+            
+            .footer-logo .logo-pixel {
+                grid-template-columns: repeat(2, 15px);
+                grid-template-rows: repeat(2, 15px);
+                gap: 2px;
+            }
+            
+            .footer-logo .logo-text {
+                font-size: 1.25rem;
+            }
+            
+            .footer-brand {
+                text-align: center;
+            }
+            
+            .footer-logo {
+                justify-content: center;
             }
         }
 
@@ -1542,8 +1604,11 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div>
-                    <h4>Rinai Studio</h4>
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="/assets/logo.svg" alt="Rinai Studio Logo" class="footer-logo-img">
+                        <span class="logo-text">Rinai Studio</span>
+                    </div>
                     <p>Premium graphic design services that combine creative excellence with competitive pricing.</p>
                 </div>
                 <div class="footer-nav">
