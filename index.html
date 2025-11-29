@@ -104,11 +104,43 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary-color);
             text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            opacity: 0.8;
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* Responsive logo */
+        @media (max-width: 480px) {
+            .logo-img {
+                height: 35px;
+            }
+            
+            .logo-text {
+                font-size: 1.25rem;
+            }
         }
 
         .nav-desktop {
@@ -1035,8 +1067,11 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <a href="#home" class="logo">Rinai Studio</a>
-                
+                <a href="#home" class="logo">
+                    <img src="/assets/logo.png" alt="Rinai Studio Logo" class="logo-img">
+                    <span class="logo-text">Rinai Studio</span>
+                </a>
+
                 <!-- Desktop Navigation -->
                 <nav class="nav-desktop" aria-label="Main navigation">
                     <ul>
